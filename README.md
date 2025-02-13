@@ -14,9 +14,8 @@ cd Movie-Turning-Point-Eval
 2. Create Environment
 ```Shell
 conda create -n tp_iden python=3.10 -y
-
 conda activate tp_iden
-pip install --upgrade pip  # enable PEP 660 support
+pip install -r requirements.txt
 ```
 
 ## Data
