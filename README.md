@@ -1,5 +1,5 @@
 # Movie-Turning-Point-Eval
-This repo contains code for evaluating SOTA LLMs for Turning Point Identification on the TRIPOD Dataset, both for plot synopsis and full screenplay. Report is available [here](/data1/kartik/TRIPOD/Movie-Turning-Point-Eval/report.pdf).
+This repo contains code for evaluating SOTA LLMs for Turning Point Identification on the TRIPOD Dataset, both for plot synopsis and full screenplay. Report is available [here](report.pdf).
 
 
 
@@ -20,11 +20,11 @@ pip install --upgrade pip  # enable PEP 660 support
 
 ## Data
 
-We format the [TRIPOD test set](https://github.com/ppapalampidi/TRIPOD) to make it easier to run with LLMs. All the data for plot synopsis and full screenplay is available [here](/data1/kartik/TRIPOD/Movie-Turning-Point-Eval/data). Download the original test set files from [here](https://github.com/ppapalampidi/TRIPOD).
+We format the [TRIPOD test set](https://github.com/ppapalampidi/TRIPOD) to make it easier to run with LLMs. All the data for plot synopsis and full screenplay is available [here](Movie-Turning-Point-Eval/data). Download the original test set files from [here](https://github.com/ppapalampidi/TRIPOD).
 
 ## Plot Synopsis Evaluation
 
-For plot synopsis, we evaluate a bunch of LLMs in 0,1,5-Shot and fine-tuning setting. Our prompts are available in the [prompts.txt file](Movie-Turning-Point-Eval/data/prompts.txt)
+For plot synopsis, we evaluate a bunch of LLMs in 0,1,5-Shot and fine-tuning setting. Our prompts are available in the [prompts.txt file](data/prompts.txt)
 
 
 To run a sample inference with Llama-3.1-8B for 0-Shot evaluation:
@@ -55,6 +55,7 @@ python your_script.py   --model_name "unsloth/Meta-Llama-3.1-8B-Instruct"\
                         --output_dir "/path/to/save/model"
 ```
 
+## Screenplay Evaluation
 
-
-
+The few shot examples used for screenplay evaluation are available [here](Movie-Turning-Point-Eval/data/screenplay/few_shot_example.json)
+To run a sample inference with Llama-3.1-8B for 1-Shot evaluation:
