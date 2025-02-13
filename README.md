@@ -22,7 +22,7 @@ pip install --upgrade pip  # enable PEP 660 support
 
 We format the [TRIPOD test set](https://github.com/ppapalampidi/TRIPOD) to make it easier to run with LLMs. All the data for plot synopsis and full screenplay is available [here](data). Download the original test set files from [here](https://github.com/ppapalampidi/TRIPOD).
 
-## Plot Synopsis Evaluation
+## Plot Synopsis 
 
 For plot synopsis, we evaluate a bunch of LLMs in 0,1,5-Shot and fine-tuning setting. Our prompts are available in the [prompts.txt file](data/prompts.txt)
 
@@ -30,14 +30,14 @@ For plot synopsis, we evaluate a bunch of LLMs in 0,1,5-Shot and fine-tuning set
 To run a sample inference with Llama-3.1-8B for 0-Shot evaluation:
 
 ```bash
-# Run the fine-tuning script
-python your_script.py   path/to/scene_summaries.json\
-                        path/to/screenplays.csv\
-                        path/to/synopses.csv\
-                        path/to/output.json
+python inference_llama_plot_synopsis.py /path/to/separate_sentences.json \
+                 /path/to/screenplays.csv \
+                 /path/to/output.json
+
 ```
 
 This code will return a json file in this format:
+
 ```json
 {
     "movie_name": "movie name",
@@ -45,7 +45,7 @@ This code will return a json file in this format:
 }
 ```
 
-For evaluation run the evaluation file:
+For evaluation on the plot synopsis, run the evaluation script:
 
 ```bash
 python3 evaluation_plot_synopsis.py --gt_file /path/to/gt_plot_synopsis_csv\
@@ -67,9 +67,9 @@ python finetuning_unsloth.py   --model_name "unsloth/Meta-Llama-3.1-8B-Instruct"
 ```
 
 
-## Screenplay Evaluation
+## Screenplay
 
-For screenplay evaluation, we first generate scene level and movie summaries to reduce context length. The summaries for the test set are available here: [scenes](data/screenplay/scene_summaries.json),[movies](data/screenplay/movie_summaries.json). The few-shot examples used for screenplay evaluation are available [here](data/screenplay/few_shot_example.json).
+For screenplay, we first generate scene level and movie summaries to reduce context length. The summaries for the test set are available here: [scenes](data/screenplay/scene_summaries.json),[movies](data/screenplay/movie_summaries.json). The few-shot examples used for screenplay evaluation are available [here](data/screenplay/few_shot_example.json).
 
 To run a sample inference with Llama-3.1-8B for 1-Shot evaluation for the QA+DP method, run the following code:
 
@@ -87,7 +87,7 @@ python inference_llama_screenplay_dp_qa.py --hf_token "your_huggingface_token" \
 
 This will give a directory with json files for each movie. Pass this folder to [change_format.py](change_format.py) to convert the output to a confidence score format.
 
-Run the following command to get the predicted turning points using our DP algorithm and final scores.
+Run the following script to get the predicted turning points as a json file using our DP algorithm and print the final scores.
 
 ```bash
 python3 evaluation_screenplay.py    --gt_file /path/to/gt_screenplay_csv\
