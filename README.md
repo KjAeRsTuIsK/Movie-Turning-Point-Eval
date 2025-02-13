@@ -1,5 +1,5 @@
 # Movie-Turning-Point-Eval
-This repo contains code for evaluating SOTA LLMs for Turning Point Identification on the TRIPOD Dataset, both for plot synopsis and full screenplay. Report is available [here](report.pdf).
+This repo contains code for evaluating SOTA LLMs for Turning Point Identification on the TRIPOD Dataset, both for plot synopsis and full screenplay. Report is available [here](final_report_sfd.pdf).
 
 
 
