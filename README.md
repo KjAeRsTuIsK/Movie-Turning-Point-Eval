@@ -1,11 +1,11 @@
 # Movie-Turning-Point-Eval
-This repo contains code for evaluating SOTA LLMs for Turning Point Identification on the TRIPOD Dataset, both for plot synopsis and full screenplay. Report is available [here](final_report_sfd.pdf).
+This repo contains code for evaluating SOTA LLMs for Turning Point Identification on the [TRIPOD Dataset](https://github.com/ppapalampidi/TRIPOD), both for plot synopsis and full screenplay. Report is available [here](final_report_sfd.pdf).
 
 
 
 ## Install
 
-1. Clone this repository and navigate to GeoChat folder
+1. Clone this repository and navigate to Movie-Turning-Point-Eval folder
 ```bash
 git clone https://github.com/KjAeRsTuIsK/Movie-Turning-Point-Eval.git
 cd Movie-Turning-Point-Eval
@@ -14,6 +14,7 @@ cd Movie-Turning-Point-Eval
 2. Create Environment
 ```Shell
 conda create -n tp_iden python=3.10 -y
+
 conda activate tp_iden
 pip install --upgrade pip  # enable PEP 660 support
 ```
