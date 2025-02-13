@@ -46,11 +46,19 @@ This code will return a json file in this format:
 ```
 
 For evaluation run the evaluation file:
+
 ```bash
-python evaluation.py 
+python3 evaluation_plot_synopsis.py --gt_file /path/to/gt_plot_synopsis_csv\
+                                    --input_file /path/to/llm_output.json\
+                                    --separate_sentences data/plot_synopsis/separate_sentences.json
 ```
 
-We use Unsloth to LoRA finetune Llama-3.1-8B. The reasoning instruction tuning dataset generated using Llama-3.1-70B is available [here](data/plot_synopsis/reasoning_instruction_dataset.json). First create a new environment, following [Unsloth](https://github.com/unslothai/unsloth), then run the finetuning script as shown below. Finetuning parameters can be changed within [finetuning_unsloth.py](finetuning_unsloth.py).  
+## Finetuning on Plot Synopsis
+
+TRIPOD dataset contains 128 (84 individual movies) training samples, with human annotation for the plot synopsis. We create multiple instruction tuning datasets, the reasoning instruction tuning dataset generated using Llama-3.1-70B is available [here](data/plot_synopsis/reasoning_instruction_dataset.json). 
+
+We use Unsloth to LoRA finetune Llama-3.1-8B. The reasoning . First create a new environment, following [Unsloth](https://github.com/unslothai/unsloth), then run the finetuning script as shown below. Finetuning parameters can be changed within [finetuning_unsloth.py](finetuning_unsloth.py).  
+
 
 ```bash
 python finetuning_unsloth.py   --model_name "unsloth/Meta-Llama-3.1-8B-Instruct"\
@@ -58,11 +66,13 @@ python finetuning_unsloth.py   --model_name "unsloth/Meta-Llama-3.1-8B-Instruct"
                         --output_dir "/path/to/save/model"
 ```
 
+
 ## Screenplay Evaluation
 
 For screenplay evaluation, we first generate scene level and movie summaries to reduce context length. The summaries for the test set are available here: [scenes](data/screenplay/scene_summaries.json),[movies](data/screenplay/movie_summaries.json). The few-shot examples used for screenplay evaluation are available [here](data/screenplay/few_shot_example.json).
 
 To run a sample inference with Llama-3.1-8B for 1-Shot evaluation for the QA+DP method, run the following code:
+
 
 ```bash
 python inference_llama_screenplay_dp_qa.py --hf_token "your_huggingface_token" \
@@ -74,16 +84,20 @@ python inference_llama_screenplay_dp_qa.py --hf_token "your_huggingface_token" \
                  --output_dir "/path/to/output"
 ```
 
+
 This will give a directory with json files for each movie. Pass this folder to [change_format.py](change_format.py) to convert the output to a confidence score format.
 
 Run the following command to get the predicted turning points using our DP algorithm and final scores.
 
 ```bash
-python evaluation_screenplay.py --folder_path /path/to/changed_format_folder
+python3 evaluation_screenplay.py    --gt_file /path/to/gt_screenplay_csv\
+                                    --input_folder /path/to/llm_output_changed_format_folder\
+                                    --scene_summaries data/screenplay/scene_summaries.json
+
 ```
 
 ## Acknowledgement
 
 This work was done as part of my internship at MBZUAI, with [Prof Ivan Laptev](https://www.di.ens.fr/~laptev/) and [Prof Makarand Tapaswi](https://makarandtapaswi.github.io/). We are thankful to the open source community for granting access to all the LLMs, and to [Unsloth](https://github.com/unslothai/unsloth) for the awesome open-sourced faster finetuning code for LLM's.
 
-For any queries, please reach out to [kartikkuckreja456@gmail.com](kartikkuckreja456@gmail.com)
+For any queries, please reach out to [kartikkuckreja456@gmail.com](mailto:kartikkuckreja456@gmail.com)

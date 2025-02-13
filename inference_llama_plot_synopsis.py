@@ -113,12 +113,17 @@ def main():
             (movie['sentences'] for movie in all_sentences if movie['movie_name'] == movie_name),
             None
         )
+        num_sentences = next(
+            (movie['total_sentences'] for movie in all_sentences if movie['movie_name'] == movie_name),
+            None
+        )
 
         if scene_summaries:
             output_answer = generate_turning_points(model, tokenizer, scene_summaries)
             all_movie_summaries.append({
                 "movie_name": movie_name,
-                "answer": output_answer
+                "answer": output_answer,
+                "num_sentences":num_sentences
             })
 
     # Save the results to a JSON file
