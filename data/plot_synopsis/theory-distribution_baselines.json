@@ -1,0 +1,272 @@
+[
+    {
+        "movie_name": "The Back-up Plan",
+        "total_sentences": 23,
+        "theory": [
+            2,
+            6,
+            12,
+            17,
+            22
+        ],
+        "distribution": [
+            3,
+            7,
+            12,
+            17,
+            21
+        ]
+    },
+    {
+        "movie_name": "The Shining (film)",
+        "total_sentences": 43,
+        "theory": [
+            4,
+            11,
+            22,
+            32,
+            41
+        ],
+        "distribution": [
+            5,
+            14,
+            22,
+            32,
+            38
+        ]
+    },
+    {
+        "movie_name": "Juno (film)",
+        "total_sentences": 30,
+        "theory": [
+            3,
+            8,
+            15,
+            22,
+            28
+        ],
+        "distribution": [
+            3,
+            10,
+            15,
+            22,
+            27
+        ]
+    },
+    {
+        "movie_name": "Soldier (1998 American film)",
+        "total_sentences": 39,
+        "theory": [
+            4,
+            10,
+            20,
+            29,
+            37
+        ],
+        "distribution": [
+            4,
+            12,
+            20,
+            29,
+            35
+        ]
+    },
+    {
+        "movie_name": "Panic Room",
+        "total_sentences": 32,
+        "theory": [
+            3,
+            8,
+            16,
+            24,
+            30
+        ],
+        "distribution": [
+            4,
+            10,
+            16,
+            24,
+            29
+        ]
+    },
+    {
+        "movie_name": "Arbitrage (film)",
+        "total_sentences": 20,
+        "theory": [
+            2,
+            5,
+            10,
+            15,
+            19
+        ],
+        "distribution": [
+            2,
+            6,
+            10,
+            15,
+            18
+        ]
+    },
+    {
+        "movie_name": "The Breakfast Club",
+        "total_sentences": 15,
+        "theory": [
+            2,
+            4,
+            8,
+            11,
+            14
+        ],
+        "distribution": [
+            2,
+            5,
+            8,
+            11,
+            13
+        ]
+    },
+    {
+        "movie_name": "Slumdog Millionaire",
+        "total_sentences": 45,
+        "theory": [
+            4,
+            11,
+            22,
+            34,
+            43
+        ],
+        "distribution": [
+            5,
+            14,
+            23,
+            33,
+            40
+        ]
+    },
+    {
+        "movie_name": "Total Recall (1990 film)",
+        "total_sentences": 31,
+        "theory": [
+            3,
+            8,
+            16,
+            23,
+            29
+        ],
+        "distribution": [
+            4,
+            10,
+            16,
+            23,
+            28
+        ]
+    },
+    {
+        "movie_name": "Unforgiven",
+        "total_sentences": 35,
+        "theory": [
+            4,
+            9,
+            18,
+            26,
+            33
+        ],
+        "distribution": [
+            4,
+            11,
+            18,
+            26,
+            31
+        ]
+    },
+    {
+        "movie_name": "Die Hard",
+        "total_sentences": 44,
+        "theory": [
+            4,
+            11,
+            22,
+            33,
+            42
+        ],
+        "distribution": [
+            5,
+            14,
+            22,
+            33,
+            39
+        ]
+    },
+    {
+        "movie_name": "Moon (film)",
+        "total_sentences": 30,
+        "theory": [
+            3,
+            8,
+            15,
+            22,
+            28
+        ],
+        "distribution": [
+            3,
+            10,
+            15,
+            22,
+            27
+        ]
+    },
+    {
+        "movie_name": "One Eight Seven",
+        "total_sentences": 27,
+        "theory": [
+            3,
+            7,
+            14,
+            20,
+            26
+        ],
+        "distribution": [
+            3,
+            9,
+            14,
+            20,
+            24
+        ]
+    },
+    {
+        "movie_name": "The Crying Game",
+        "total_sentences": 44,
+        "theory": [
+            4,
+            11,
+            22,
+            33,
+            42
+        ],
+        "distribution": [
+            5,
+            14,
+            22,
+            33,
+            39
+        ]
+    },
+    {
+        "movie_name": "The Last Temptation of Christ (film)",
+        "total_sentences": 50,
+        "theory": [
+            5,
+            12,
+            25,
+            38,
+            47
+        ],
+        "distribution": [
+            6,
+            16,
+            25,
+            37,
+            45
+        ]
+    }
+]
