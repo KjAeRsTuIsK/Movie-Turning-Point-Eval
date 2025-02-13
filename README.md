@@ -92,7 +92,7 @@ Run the following script to get the predicted turning points as a json file usin
 ```bash
 python evaluation_screenplay.py    --gt_file /path/to/gt_screenplay_csv\
                                     --input_folder /path/to/llm_output_changed_format_folder\
-                                    --scene_summaries data/screenplay/scene_summaries.json
+                                    --output_file /path/to/output_json_file
 
 ```
 
