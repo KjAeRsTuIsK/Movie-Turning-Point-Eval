@@ -44,11 +44,11 @@ This code will return a json file in this format:
     "answer": "output from llm"
 }
 ```
-
-For evaluation on the plot synopsis, run the evaluation script:
+Depending on the chat template of the llm and the output format, make changes to the [evaluation_plot_synopsis](evaluation_plot_synopsis.py).
+For evaluation on the plot synopsis in the reasoning output format (sample output available [here](data/plot_synopsis/reasoning_instruction_dataset.json)), run the following evaluation script:
 
 ```bash
-python3 evaluation_plot_synopsis.py --gt_file /path/to/gt_plot_synopsis_csv\
+python evaluation_plot_synopsis.py  --gt_file /path/to/gt_plot_synopsis_csv\
                                     --input_file /path/to/llm_output.json\
                                     --separate_sentences data/plot_synopsis/separate_sentences.json
 ```
@@ -90,7 +90,7 @@ This will give a directory with json files for each movie. Pass this folder to [
 Run the following script to get the predicted turning points as a json file using our DP algorithm and print the final scores.
 
 ```bash
-python3 evaluation_screenplay.py    --gt_file /path/to/gt_screenplay_csv\
+python evaluation_screenplay.py    --gt_file /path/to/gt_screenplay_csv\
                                     --input_folder /path/to/llm_output_changed_format_folder\
                                     --scene_summaries data/screenplay/scene_summaries.json
 
