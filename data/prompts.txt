@@ -1,0 +1,36 @@
+prompt_summary="Your task is to take the detailed movie screenplay provided below\
+            and convert it into a concise summary. The summary should capture the main plot points and key events of the movie in 9-10 sentences. Output should be the summary only. Do not write anything else. Do not provide any headings or mention any scene numbers. Screenplay: "
+        
+prompt_scene_summary=" Your task is to summarize the given scene and convert it into a concise summary.The summary should capture the main plot points and key events of the scene. Just output the summary, without any reasoning or your own thoughts on the story."
+
+prompt_dp_qa = (
+        "There are six stages (acts) in a film, namely the setup, the new situation, progress, complications and higher stakes, the final push, and the aftermath, separated by five turning points (TPs). TPs are narrative moments from which the plot goes in a different direction, that is from one act to another. The five turning points are described as:\n"
+        "1. Opportunity: An introductory event that occurs after presenting the setting and background of the main characters, driving the narrative from setup to new situation.\n"
+        "2. Change of Plans: An event where the main goal of the story is defined, leading to increased action, driving the narrative from the introduction of new situation to it's progress.\n"
+        "3. Point of No Return: An event that pushes the main character(s) to fully commit to their goal, driving the narrative from the progress to it's complications and high-stake difficulties.\n"
+        "4. Major Setback: An event where everything falls apart (temporarily or permanently), progressing the story from complications to the final push. \n"
+        "5. Climax: The final event of the main story, the moment of resolution, and the 'biggest spoiler', progressing the story from the final push to the aftermath of the main plot.\n\n"
+        # "For each present scene, provide the confidence score (from 1 to 10) that it belongs to each turning point.\n"
+        # "Format your answer as: \n"
+        
+        "You will be provided with the following inputs: 1. **Movie Summary**: A brief summary of the entire movie, providing context for the overall plot and character arcs."
+        "2. **Current Scene Summary**: A summary of the scene currently being analyzed."
+        "3. **Scene Before Summary**: A summary of the scenes immediately preceding the current scene."
+        "4. **Scene After Summary**: A summary of the scenes immediately following the current scene."
+        "Based on the movie summary, the summaries for the scenes before and after the present scenes, you will be asked questions related to identifying turning points in the plot synopsis. Answer the questions with a Yes/No."
+        "Do not provide reasoning for the answer. ")
+
+prompt_plot_synopsis = (
+        "There are six stages (acts) in a film: the setup, the new situation, progress, "
+        "complications and higher stakes, the final push, and the aftermath, separated by five turning points (TPs). "
+        "The five turning points are:\n"
+        "1. Opportunity: An introductory event that drives the narrative from setup to new situation.\n"
+        "2. Change of Plans: An event defining the main goal, leading to increased action.\n"
+        "3. Point of No Return: An event pushing the main character(s) to fully commit to their goal.\n"
+        "4. Major Setback: An event where everything falls apart, leading to the final push.\n"
+        "5. Climax: The final event of the main story, resolving the main plot.\n\n"
+        "You will be provided with the plot synopsis of a movie. Your task is to find all 5 turning points. "
+        "The output should be the sentence number for each turning point, starting from 0. "
+        "###Example Output###: Turning points: {1,3,15,20,31}, where each number is the sentence number from the plot synopsis. "
+        "Do not provide reasoning for the answer."
+    )
